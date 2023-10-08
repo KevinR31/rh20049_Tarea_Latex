@@ -1,0 +1,605 @@
+\documentclass[letterpaper]{article}
+\usepackage{calc,amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage[english,spanish]{babel}
+\usepackage{xcolor,fancyhdr}
+\usepackage[top=0.9839in,bottom=0.5in,hmargin=1.1811in,nohead,includefoot,foot=0.4839in,footskip=0.92840004in]{geometry}
+\usepackage{array,supertabular,hhline,enumitem,hyperref}
+\hypersetup{colorlinks=true,allcolors=blue,pdfauthor=Kevin Anthony Rogel Hern[FFFD?]ndez}
+% Outline numbering
+\setcounter{secnumdepth}{0}
+% Text styles
+\newcommand\textstyleInternetlink[1]{\textcolor[HTML]{0563C1}{#1}}
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+% Pages
+\fancypagestyle{Standard}{\fancyhf{}
+  \fancyhead[L]{}
+  \fancyfoot[C]{\thepage{}}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \renewcommand\thepage{\arabic{page}}
+}
+\pagestyle{Standard}
+\setlength\tabcolsep{1mm}
+\renewcommand\arraystretch{1.3}
+\author{Kevin Anthony Rogel Hern[FFFD?]ndez}
+\date{2023-10-08}
+\begin{document}
+\clearpage
+\pagestyle{Standard}
+\setcounter{page}{1}
+\section{Marco teórico: Herramientas Automatizadas de Prueba de Software}
+\subsection{Generalidades}
+Las herramientas automatizadas de prueba de software son programas o aplicaciones diseñados para simplificar y
+automatizar el proceso de prueba de software, lo que resulta fundamental en el ciclo de vida del desarrollo de software
+al facilitar la detección eficiente de problemas, errores y defectos en el software. A continuación, se presentan
+algunas consideraciones generales acerca de estas herramientas:
+
+\begin{itemize}[series=listWWNumx,]
+\item \textbf{Automatización de pruebas:} El propósito principal de estas herramientas es automatizar la ejecución de
+pruebas en un software. Esto se logra mediante la creación de secuencias de comandos o casos de prueba que se ejecutan
+de manera programada, sin intervención manual, para evaluar el comportamiento del software.
+\item \textbf{Tipos de pruebas:} Las herramientas de prueba automatizada se aplican a diversos tipos de pruebas, que
+abarcan desde pruebas unitarias y de integración hasta pruebas funcionales, de rendimiento y de seguridad, entre otras.
+\item \textbf{Ventajas de la automatización:} Entre las ventajas más destacadas de la automatización de pruebas se
+incluyen la reducción de errores humanos, la ejecución rápida y repetible de pruebas, una cobertura exhaustiva de casos
+de prueba y la capacidad de llevar a cabo pruebas de regresión de manera eficaz.
+\item \textbf{Lenguajes de scripting:} A menudo, estas herramientas requieren que los profesionales de pruebas de
+software desarrollen scripts o secuencias de comandos para definir las pruebas. Los lenguajes de scripting comunes
+incluyen Selenium WebDriver, Appium, JUnit, TestNG, Python y otros.
+\item \textbf{Integración continua:} Estas herramientas se integran sin dificultad en los flujos de trabajo de
+integración continua (CI) y entrega continua (CD), lo que permite la detección temprana de problemas y una entrega de
+software más rápida y segura.
+\item \textbf{Herramientas populares:} Existen muchas herramientas de prueba automatizada disponibles, cada una con sus
+propias características y ventajas. Algunas de las herramientas más conocidas incluyen Selenium, JUnit, TestNG, Appium,
+Cucumber, Jenkins y muchas más.
+\item \textbf{Requisitos de habilidades:} Para utilizar estas herramientas con eficacia, los profesionales de pruebas de
+software deben contar con conocimientos en programación, comprensión de las metodologías de desarrollo de software y
+experiencia en la creación de casos de prueba.
+\item \textbf{Evaluación y selección:} Antes de elegir una herramienta de prueba automatizada, es esencial evaluar las
+necesidades de prueba específicas de tu proyecto y seleccionar la herramienta que mejor se adapte a esos requisitos.
+\item \textbf{Costos y licencias:} Las herramientas de prueba automatizada pueden variar en cuanto a costos, desde
+opciones de código abierto gratuitas hasta soluciones comerciales más costosas. Es importante considerar los gastos de
+licencia, soporte y mantenimiento al seleccionar una herramienta.
+\end{itemize}
+\section{Herramientas más utilizadas}
+\subsection{Selenium WebDriver.}
+Es una herramienta ampliamente reconocida y muy utilizada en la automatización de pruebas de software, especialmente
+cuando se trata de evaluar aplicaciones web. En el ámbito de la automatización de pruebas, Selenium se considera una
+colección de utilidades que ofrecen un conjunto completo de capacidades para automatizar la comunicación entre un
+navegador web y una aplicación web.
+
+\subsubsection{Características.}
+\begin{enumerate}[series=listWWNumix,label=\arabic*.,ref=\arabic*]
+\item \textbf{Compatibilidad con múltiples navegadores:} Es compatible con una amplia variedad de navegadores web,
+incluidos Google Chrome, Mozilla Firefox, Microsoft Edge, Safari e Internet Explorer. Esto permite realizar pruebas en
+diferentes navegadores para garantizar la compatibilidad cruzada de una aplicación web.
+\item \textbf{Soporte multiplataforma:} Es compatible con varios sistemas operativos, como Windows, macOS y Linux. Esto
+facilita la ejecución de pruebas en diferentes entornos.
+\item \textbf{Lenguajes de programación:} Selenium WebDriver admite múltiples lenguajes de programación populares, como
+Java, Python, C\#, Ruby, JavaScript y otros. Esto permite a los desarrolladores y probadores utilizar el lenguaje con
+el que se sientan más cómodos para escribir scripts de automatización de pruebas.
+\item \textbf{Grabación y reproducción (Selenium IDE):} Aunque no es la característica principal de Selenium, Selenium
+IDE proporciona una extensión para navegadores que permite grabar y reproducir acciones en una aplicación web. Es una
+forma fácil de comenzar con la automatización de pruebas, especialmente para usuarios no técnicos.
+\item \textbf{Amplia comunidad y recursos:} Cuenta con una comunidad activa de usuarios y una gran cantidad de recursos
+disponibles en línea, como documentación, tutoriales y foros de soporte. Esto facilita la obtención de ayuda y la
+resolución de problemas.
+\item \textbf{Flexibilidad:} Es altamente flexible y permite una amplia gama de interacciones con elementos web, como
+hacer clic, llenar formularios, navegar por páginas, validar contenido y más. Esto lo hace adecuado para pruebas
+funcionales y de regresión.
+\item \textbf{Integración con herramientas de gestión de pruebas y CI/CD:} Se integra fácilmente con herramientas de
+gestión de pruebas como TestRail y con plataformas de integración continua (CI) como Jenkins. Esto permite automatizar
+y orquestar el proceso de ejecución de pruebas dentro del ciclo de entrega de software.
+\item \textbf{Pruebas de carga y rendimiento:} Aunque Selenium está diseñado principalmente para pruebas funcionales, se
+pueden utilizar complementos y herramientas adicionales para realizar pruebas de carga y rendimiento en aplicaciones
+web.
+\item \textbf{Ecosistema en constante evolución:} Sigue mejorando y adaptándose a las cambiantes tecnologías web. Los
+desarrolladores de Selenium continúan desarrollando nuevas versiones y características para mantener la herramienta
+relevante.
+\item \textbf{Pruebas de aplicaciones móviles:} Además de las pruebas web, ofrece capacidades para automatizar pruebas
+en aplicaciones móviles a través de frameworks como Appium.
+\end{enumerate}
+\subsubsection{Contenido de Selenium suits.}
+\begin{itemize}[series=listWWNumxii,]
+\item \textbf{Suite de Herramientas Selenium:} Selenium no es una única herramienta, sino una colección de herramientas
+relacionadas que se utilizan en conjunto para la automatización de pruebas web. Las herramientas principales en la
+suite de Selenium incluyen:
+\item \textbf{\textit{Selenium WebDriver: }}Esta es la parte central de Selenium y se utiliza para automatizar la
+interacción con navegadores web. Permite escribir scripts en varios lenguajes de programación (como Java, Python, C\#,
+etc.) para controlar un navegador web y realizar acciones en una aplicación web.
+\item \textbf{\textit{Selenium IDE: }}Es una extensión del navegador que permite la grabación y reproducción de acciones
+en un navegador web. Es una forma fácil de comenzar con la automatización de pruebas, pero es menos poderosa que
+Selenium WebDriver.
+\item \textbf{\textit{Selenium Grid: }}Es una herramienta que permite la ejecución de pruebas en paralelo en múltiples
+navegadores y sistemas operativos. Esto es útil para probar la compatibilidad multiplataforma de una aplicación web.
+\item \textbf{Automatización de Pruebas Web:} Se utiliza principalmente para la automatización de pruebas en
+aplicaciones web. Permite a los testers y desarrolladores escribir scripts que interactúan con una aplicación web de la
+misma manera que lo haría un usuario real. Esto incluye acciones como hacer clic en enlaces, llenar formularios,
+navegar por páginas y verificar el contenido de la página.
+\item \textbf{Lenguajes de Programación:} Selenium WebDriver es compatible con varios lenguajes de programación
+populares, lo que facilita su uso por parte de diferentes equipos de desarrollo y prueba. Algunos de los lenguajes
+comunes son Java, Python, C\#, Ruby y JavaScript.
+\item \textbf{Navegadores Compatibles}: Es compatible con una variedad de navegadores web populares, como Chrome,
+Firefox, Safari, Edge e Internet Explorer. Esto permite realizar pruebas de compatibilidad cruzada para garantizar que
+una aplicación web funcione correctamente en diferentes navegadores.
+\item \textbf{Pruebas Funcionales y de Regresión:} Se utiliza para realizar pruebas funcionales y de regresión en
+aplicaciones web. Las pruebas funcionales aseguran que una aplicación funcione según lo previsto, mientras que las
+pruebas de regresión verifican que las nuevas actualizaciones no hayan introducido errores en áreas previamente
+funcionales.
+\end{itemize}
+\subsection{Appium}
+Se trata de una herramienta de código abierto destinada a la automatización de pruebas de software en aplicaciones
+móviles que funcionan en sistemas operativos como iOS, Android y Windows. Su desarrollo tuvo como objetivo proporcionar
+una solución integral para automatizar pruebas en dispositivos móviles y aplicaciones, sin importar el sistema
+operativo utilizado o el tipo de aplicación (ya sea nativa, híbrida o basada en web).
+
+\subsubsection{Características }
+\begin{enumerate}[series=listWWNumxi,label=\arabic*.,ref=\arabic*]
+\item \textbf{Versatilidad en Plataformas:} Es conocido por su capacidad de automatización en múltiples plataformas, lo
+que incluye iOS y Android. Esto significa que los equipos de desarrollo y pruebas pueden emplear una única suite de
+pruebas para ambas plataformas.
+\item \textbf{Compatibilidad con Diversos Tipos de Aplicaciones:} Es capaz de automatizar pruebas en una variedad de
+tipos de aplicaciones móviles, incluyendo aplicaciones nativas (desarrolladas específicamente para la plataforma),
+aplicaciones híbridas (que combinan componentes web y nativos), y aplicaciones web móviles.
+\item \textbf{Flexibilidad de Lenguajes de Programación:} Es compatible con varios lenguajes de programación populares,
+como Java, Python, C\#, Ruby, JavaScript, entre otros. Esto brinda a los equipos de desarrollo y pruebas la libertad de
+elegir el lenguaje que prefieran para escribir sus scripts de automatización de pruebas.
+\item \textbf{Basado en el Protocolo WebDriver:} Se basa en el protocolo WebDriver, lo que implica que las pruebas
+pueden ser desarrolladas utilizando la API estándar de WebDriver. Esto resulta especialmente beneficioso para aquellos
+que ya tienen experiencia previa con Selenium WebDriver, ya que les resultará familiar.
+\item \textbf{Compatibilidad con Simuladores y Dispositivos Reales:} Tiene la capacidad de automatizar pruebas tanto en
+simuladores/emuladores como en dispositivos móviles reales. Esto permite llevar a cabo pruebas en diversos escenarios y
+configuraciones.
+\item \textbf{Integración con Frameworks de Pruebas:} Se integra sin problemas con muchos frameworks de pruebas
+ampliamente utilizados, simplificando así la implementación de pruebas de unidad, pruebas funcionales y pruebas de
+regresión.
+\item \textbf{Soporte Activo y Comunidad Vibrante:} Cuenta con una comunidad activa de usuarios y desarrolladores, lo
+que significa que existe una gran cantidad de recursos, documentación y soporte en línea disponibles para ayudar a los
+usuarios a aprender y utilizar la herramienta de manera efectiva.
+\item \textbf{Pruebas en Aplicaciones Nativas y Navegadores Móviles:} Permite la automatización de pruebas tanto en
+aplicaciones móviles nativas como en navegadores móviles. Esto es valioso para llevar a cabo pruebas de funcionalidad y
+rendimiento en aplicaciones móviles.
+\end{enumerate}
+\subsection{Cucumber}
+Cucumber es una herramienta de código abierto utilizada para realizar pruebas de comportamiento (Behavior-Driven
+Development o BDD, por sus siglas en inglés). BDD es una metodología de desarrollo de software que pone énfasis en la
+colaboración entre desarrolladores, probadores y expertos en el dominio para definir y comprender el comportamiento
+deseado de un software, desde la perspectiva del usuario o el negocio.
+
+Cucumber facilita la comunicación entre estos distintos roles al permitir que las especificaciones de comportamiento se
+redacten en un lenguaje natural comprensible para todas las partes involucradas. Estas especificaciones se estructuran
+en forma de escenarios, los cuales describen situaciones concretas que se anticipa que ocurran en el software.
+
+\subsubsection{Características}
+\begin{enumerate}[series=listWWNumxiii,label=\arabic*.,ref=\arabic*]
+\item \textbf{Lenguaje Gherkin:} Utiliza un lenguaje específico llamado Gherkin para escribir especificaciones de
+comportamiento de manera legible y comprensible. Gherkin utiliza palabras clave como
+{\textquotedbl}Given{\textquotedbl} (Dado), {\textquotedbl}When{\textquotedbl} (Cuando),
+{\textquotedbl}Then{\textquotedbl} (Entonces) y otras para describir el flujo de un escenario.
+\item \textbf{Ejecución de Escenarios:} Puede ejecutar los escenarios escritos en Gherkin y verificar si el
+comportamiento real del software coincide con las especificaciones definidas. Si los escenarios fallan, Cucumber genera
+informes detallados que indican dónde y por qué fallaron.
+\item \textbf{Soporte Multilingüe:} Es compatible con varios lenguajes de programación populares, como Java, Ruby,
+Python, C\#, entre otros. Esto permite a los equipos de desarrollo y pruebas utilizar el lenguaje de programación con
+el que están más familiarizados.
+\item \textbf{Integración con Herramientas de Pruebas y CI/CD:} Se puede integrar con diversas herramientas de pruebas,
+como Selenium para pruebas de interfaz de usuario, y con sistemas de integración continua (CI) y entrega continua (CD)
+para automatizar la ejecución de pruebas como parte del flujo de trabajo de desarrollo.
+\item \textbf{Reutilización de Pasos:} Los pasos comunes en los escenarios pueden reutilizarse en múltiples
+especificaciones, lo que ayuda a mantener un conjunto coherente de pasos y facilita la escalabilidad de las pruebas.
+\item \textbf{Colaboración:} Fomenta la colaboración entre desarrolladores, testers y otros interesados, ya que todos
+pueden entender y revisar las especificaciones de comportamiento escritas en Gherkin.
+\item \textbf{Pruebas de Aceptación y Validación:} Se utiliza principalmente para escribir pruebas de aceptación que
+verifican si una aplicación cumple con los requisitos del usuario y el negocio. También se puede utilizar para validar
+que nuevas características no introduzcan errores en las áreas existentes de la aplicación (pruebas de regresión).
+\end{enumerate}
+\subsection{Cuadro comparativo técnico de las herramientas}
+\begin{flushleft}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\centering
+\begin{supertabular}{m{3.2cm}m{3.2cm}m{3.2cm}m{3.2cm}}
+\hline
+\centering{\bfseries Aspecto Técnico} &
+\centering{\bfseries Selenium WebDtiver} &
+\centering{\bfseries Appium} &
+\centering\arraybslash{\bfseries Cucumber}\\\hline
+\centering{\bfseries Tipo de Herramienta} &
+\centering Automatización de pruebas web y aplicaciones &
+\centering Automatización de pruebas móviles y aplicaciones &
+\centering\arraybslash BDD para especificaciones y pruebas\\\hline
+\centering{\bfseries Enfoque} &
+\centering Pruebas de aplicaciones web en navegadores &
+\centering Pruebas de aplicaciones móviles en iOS, Android y Windows &
+\centering\arraybslash Pruebas de comportamiento y validación\\\hline
+\centering{\bfseries Plataformas Soportadas} &
+\centering Múltiples navegadores y sistemas operativos &
+\centering iOS, Android, Windows &
+\centering\arraybslash Múltiples lenguajes de programación y sistemas operativos\\\hline
+\centering{\bfseries Soporte para Aplicaciones Nativas, Híbridas y Web} &
+\centering Sí (mediante Selenium WebDriver) &
+\centering Sí (Aplicaciones nativas, híbridas y web) &
+\centering\arraybslash Enfoque en especificaciones, no directamente para tipos de aplicaciones\\\hline
+\centering{\bfseries Compatibilidad con Browsers y Dispositivos} &
+\centering Amplia compatibilidad con navegadores &
+\centering Amplia compatibilidad con dispositivos móviles &
+\centering\arraybslash No aplica, ya que no es una herramienta de automatización directa\\\hline
+\centering{\bfseries Generación de Informes} &
+\centering Integración con frameworks de informes (como TestNG, JUnit) &
+\centering Generación de informes personalizados &
+\centering\arraybslash Generación de informes integrados en el formato Gherkin\\\hline
+\centering{\bfseries Integración con CI/CD} &
+\centering Integración con herramientas de CI/CD como Jenkins &
+\centering Integración con sistemas de CI/CD &
+\centering\arraybslash Integración con herramientas de CI/CD para ejecución automatizada\\\hline
+\centering{\bfseries Flexibilidad} &
+\centering Muy flexible y versátil para pruebas web &
+\centering Flexible y versátil para pruebas móviles &
+\centering\arraybslash Flexible en la definición de comportamiento y pasos de prueba\\\hline
+\end{supertabular}
+\end{flushleft}
+
+\bigskip
+
+\subsection{Selección de herramienta para desarrollar un manual de instalación, ejemplos de aplicación y video de
+funcionamiento de la herramienta.}
+Se seleccionará la herramienta de Selenium WebDrive por ser la más conocida y contar con una comunidad activa y una
+basta documentación de apoyo.
+
+\subsubsection{Manual de instalación de Selenium. }
+\begin{itemize}[series=listWWNumx,]
+\item \textbf{Paso 1: Descargar Selenium.}
+
+Descargar del sitio oficial de selenium webdrive \url{https://www.selenium.dev/downloads/}
+
+\item \textbf{\textit{Paso 2: Descargar un entorno de desarrollo java junto al Java Development Kit (JDK)}}
+
+Debemos descargar el JDK acompañado de un entorno de desarrollo IDE para java
+
+\item \textbf{\textit{Paso 3: Configuramos un proyecto de java.}}
+
+Creamos un proyecto de java en el IDE que hayamos instalado en nuestro computador.
+
+\item \textbf{\textit{Paso 4: Agregar selenium webdriver a nuestro proyecto.}}
+
+Haremos clic derecho en el proyecto y elige la opción {\textquotedbl}Properties{\textquotedbl} (Propiedades).
+
+Navegaremos hasta la sección {\textquotedbl}Java Build Path{\textquotedbl} y seleccionaremos la pestaña
+{\textquotedbl}Libraries{\textquotedbl}.
+
+Seleccionaremos la opción {\textquotedbl}Add External JARs...{\textquotedbl} y busca los archivos JAR de Selenium que se
+encuentran en la carpeta que descargamos en el paso 1, hay que tener en cuenta que la carpeta que descarguemos en el
+paso 1 debemos de descomprimirla.
+
+Asegúrate de que las bibliotecas de Selenium estén incluidas en la lista de bibliotecas del proyecto y, finalmente, haz
+clic en {\textquotedbl}Apply and Close{\textquotedbl} y quedara lista para utilizarse.
+
+\item \textbf{\textit{Paso 5: Descargar los controladores necesarios para el uso de Selenium.}}
+
+Descargaremos los controladores específicos para cada navegador (seleccionar un navegador y descargar su controlador),
+los cuales incluiremos en nuestro proyecto.
+
+\textbf{\textit{Para Google Chrome:}}
+
+Descarga el controlador de Chrome WebDriver desde https://sites.google.com/chromium.org/driver/.
+
+\textbf{\textit{Para Mozilla Firefox:}}
+
+Descarga el controlador de Gecko WebDriver desde \url{https://github.com/mozilla/geckodriver/releases}.
+
+\item \textbf{\textit{Paso 6: Crear el primer script de prueba de Selenium.}}
+
+Ahora que Selenium WebDriver está configurado en tu proyecto, puedes comenzar a escribir scripts de prueba en Java.
+
+\item \textbf{\textit{Paso 7: Ejecutar script de Selenium}}
+
+Compilaremos nuestro script de prueba, al ejecutarlo Selenium abrirá una ventana de navegador en la cual daremos por
+hecho que ha funcionado. 
+\end{itemize}
+\subsubsection{Video tutorial de instalación y ejecución de Selenium.}
+\url{https://youtu.be/OEiWZUgxWfQ?si=o4sfwgJp1fflMwXH}
+
+\section{Marco teórico: Herramientas de documentación.}
+Las herramientas de documentación son programas o software diseñados para facilitar la creación, organización, gestión y
+compartición eficiente de documentos y contenido. Estas aplicaciones son valiosas en diversos entornos, desde empresas
+y equipos de desarrollo hasta instituciones académicas y organizaciones sin fines de lucro. A continuación, se presenta
+una descripción general de las principales funciones y categorías de herramientas de documentación:
+
+\begin{enumerate}[series=listWWNumxiv,label=\arabic*.,ref=\arabic*]
+\item \textbf{Creación de Documentos:} Estas herramientas posibilitan la elaboración de documentos en diferentes
+formatos, como documentos de texto, informes técnicos, presentaciones, hojas de cálculo y diagramas. Ejemplos incluyen
+Microsoft Word, Google Docs, LibreOffice Writer y aplicaciones de diagramación como Lucidchart.
+\item \textbf{Gestión de Documentos:} Estas aplicaciones ayudan a organizar y administrar archivos, ofreciendo funciones
+como almacenamiento en la nube, control de versiones, etiquetado y búsquedas avanzadas.
+\foreignlanguage{english}{Ejemplos son SharePoint, Dropbox Business y Google Drive for Work.}
+\item \textbf{Colaboración en Documentos:} Facilitan la colaboración en tiempo real en documentos compartidos,
+permitiendo a múltiples usuarios editar y comentar simultáneamente en un mismo archivo. Ejemplos incluyen Google
+Workspace (anteriormente G Suite), Microsoft Teams y Quip.
+\item \textbf{Gestión del Ciclo de Vida de Documentos (DLM):} Estas herramientas ayudan a gestionar la creación,
+revisión, aprobación, publicación y archivo de documentos a lo largo de su ciclo de vida. Son especialmente útiles en
+industrias reguladas, como la farmacéutica y la construcción.
+\item \textbf{Documentación Técnica:} Se enfocan en la creación y gestión de documentación técnica, manuales de usuario,
+documentación de API y otros materiales técnicos. Ejemplos incluyen Confluence, DocuWare y MadCap Flare.
+\end{enumerate}
+
+\bigskip
+
+\begin{enumerate}[resume*=listWWNumxiv]
+\item \textbf{Documentación de Procesos:} Están diseñadas para crear diagramas de flujo, manuales de procedimientos y
+documentación de procesos empresariales. Ejemplos son Microsoft Visio, Draw.io y Lucidchart.
+\item \textbf{Herramientas de Captura de Pantalla:} Permiten tomar capturas de pantalla y añadir anotaciones para
+explicar conceptos. Ejemplos incluyen Snagit y Greenshot.
+\item \textbf{Gestión de Documentos Empresariales (EDM):} Son sistemas más complejos utilizados para gestionar
+documentos en organizaciones grandes, incluyendo funciones de flujo de trabajo, cumplimiento normativo y seguridad
+avanzada. Ejemplos incluyen OpenText Documentum y M-Files.
+\item \textbf{Documentación Colaborativa en Línea:} Plataformas de documentación en línea que facilitan la colaboración
+en la creación y edición de documentos directamente en la web. Ejemplos son Notion, Quip y Zoho Docs.
+\item \textbf{Herramientas de Wiki:} Permiten la creación y edición colaborativa de contenidos tipo wiki, lo que
+simplifica la creación de bases de conocimiento y documentación compartida. Ejemplos incluyen MediaWiki y Confluence.
+\item \textbf{Documentación de Código:} Herramientas específicas para documentar código fuente, que incluyen comentarios
+en el código, generación de documentación técnica y creación de manuales de usuario para aplicaciones y software.
+\item \textbf{Herramientas de Escritura Creativa:} Destinadas a autores y escritores, estas aplicaciones ofrecen
+funciones específicas para la escritura de novelas, guiones, ensayos y otros tipos de contenido creativo. Ejemplos
+incluyen Scrivener y Ulysses.
+\end{enumerate}
+\subsection{Sphinx}
+Sphinx es una herramienta muy empleada en el mundo del desarrollo de software y en diversos campos técnicos. Se utiliza
+extensamente en proyectos de código abierto, para documentar bibliotecas y marcos de trabajo, así como en la creación
+de manuales de usuario. Es útil en cualquier contexto donde se necesite documentación técnica precisa y actualizada. Su
+capacidad para generar automáticamente documentación a partir del código fuente hace que sea una herramienta invaluable
+para mantener la consistencia y la precisión de la documentación en proyectos de desarrollo de software.
+
+\subsubsection{Características y funcionalidades}
+\begin{enumerate}[series=listWWNumxv,label=\arabic*.,ref=\arabic*]
+\item \textbf{Generación de Documentación Automática:} Permite generar documentación técnica de forma automática a
+partir de comentarios en el código fuente y archivos de marcado. Es especialmente útil para proyectos de software donde
+se necesita mantener documentación actualizada de manera eficiente.
+\item \textbf{Compatibilidad con Diversos Lenguajes de Programación:} Es compatible con varios lenguajes de
+programación, incluyendo Python, C/C++, Java, Ruby y otros. Esto lo hace adecuado para proyectos que utilizan una
+variedad de tecnologías.
+\item \textbf{Soporte para Diversos Formatos de Salida:} Puede generar documentación en varios formatos, como HTML, PDF,
+ePub y más. Esto permite que la documentación sea accesible en diferentes dispositivos y plataformas.
+\item \textbf{Facilidad de Uso:} Utiliza un formato de marcado llamado reStructuredText, que es fácil de aprender y
+escribir. Los comentarios en el código fuente se pueden enriquecer con directivas de Sphinx para generar documentación
+enriquecida.
+\item \textbf{Temas y Personalización:} Ofrece una variedad de temas y opciones de personalización para que los
+desarrolladores puedan adaptar la apariencia de la documentación a sus necesidades y preferencias.
+\item \textbf{Generación de Índices y Referencias Cruzadas:} Genera automáticamente índices, tablas de contenido y
+referencias cruzadas dentro de la documentación, lo que facilita la navegación y búsqueda.
+\item \textbf{Integración con Herramientas de Construcción:} Se integra bien con sistemas de construcción y herramientas
+de automatización, como Makefile y sistemas de control de versiones como Git.
+\item \textbf{Extensiones y Plugins:} Es altamente extensible y admite una variedad de extensiones y plugins
+desarrollados por la comunidad. Estas extensiones pueden agregar funcionalidades adicionales a la generación de
+documentación.
+\item \textbf{Documentación Técnica Compleja:} Es adecuado para proyectos con documentación técnica compleja, incluyendo
+documentación de APIs, diagramas de clases, ejemplos de código, y más
+\end{enumerate}
+\subsubsection{Estándares de documentación}
+\begin{enumerate}[series=listWWNumxvi,label=\arabic*.,ref=\arabic*]
+\item \textbf{Estandarización del Estilo de Documentación:} Permite definir y aplicar un estilo de documentación
+coherente en un proyecto. Esto puede incluir directrices para la estructura de la documentación, el formato de texto,
+la organización de secciones y la presentación visual.
+\item \textbf{Estándares de Comentarios en el Código Fuente:} Se integra con comentarios en el código fuente, lo que
+facilita la adhesión a estándares de documentación de código, como los comentarios docstring en Python (por ejemplo,
+PEP 257).
+\item \textbf{Estandarización de Nombres y Convenciones:} Los nombres de archivos y directorios, así como las etiquetas
+y referencias cruzadas, pueden seguir convenciones específicas definidas en el proyecto para garantizar una
+documentación coherente y fácil de seguir.
+\item \textbf{Documentación de APIs y Bibliotecas:} Es ampliamente utilizado para documentar APIs y bibliotecas de
+software siguiendo estándares y prácticas recomendadas. Esto incluye la generación de documentación de clases,
+funciones y métodos, así como la descripción de parámetros y valores de retorno.
+\item \textbf{Adherencia a Estándares de Marcado:} Utiliza reStructuredText como formato de marcado. Los proyectos
+pueden aplicar estándares de marcado específicos, como el uso de directivas y roles personalizados, para enriquecer la
+documentación según sea necesario.
+\item \textbf{Estándares de Presentación:} La apariencia visual de la documentación generada por Sphinx se puede
+personalizar utilizando temas y estilos específicos. Esto permite que la documentación siga las pautas de diseño y
+presentación de un proyecto.
+\item \textbf{Gestión de Versiones y Control de Cambios:} Puede integrarse con sistemas de control de versiones como
+Git, lo que facilita la gestión de cambios y la colaboración en la documentación, lo que es importante para mantener
+estándares a lo largo del tiempo.
+\item \textbf{Cumplimiento de Estándares Externos:} Es compatible con la generación de documentación en múltiples
+formatos, como HTML, PDF y LaTeX. Esto permite que la documentación cumpla con estándares específicos para la
+publicación en línea o la impresión.
+\end{enumerate}
+\subsection{LateX}
+LaTeX es un sistema de composición de texto ampliamente utilizado para crear documentos de alta calidad, especialmente
+en entornos académicos, científicos y técnicos. Su enfoque principal es la presentación profesional de documentos,
+incluyendo notación matemática compleja, fórmulas, gráficos y referencias bibliográficas.
+
+\subsubsection{Características}
+\begin{enumerate}[series=listWWNumxvii,label=\arabic*.,ref=\arabic*]
+\item \textbf{Propósito Principal:} LaTeX se utiliza para crear documentos de alta calidad con un enfoque en la
+presentación profesional y precisa del contenido. Es especialmente adecuado para documentos que incluyen notación
+matemática compleja, fórmulas, gráficos, referencias bibliográficas y contenido técnico.
+\item \textbf{Estructura de Marcado:} Utiliza un sistema de marcado estructurado, lo que significa que los documentos se
+crean describiendo su estructura y contenido utilizando comandos y etiquetas en lugar de formato visual directo. Esto
+permite un alto grado de control sobre el formato y estilo de los documentos.
+\item \textbf{Notación Matemática:} Es ampliamente conocido por su capacidad para representar notación matemática
+compleja de manera clara y profesional. Es una elección común para la creación de documentos matemáticos, artículos
+científicos y tesis académicas.
+\item \textbf{Documentos Largos y Complejos:} Es especialmente útil para la creación de documentos largos y complejos,
+como tesis doctorales, libros técnicos, manuales técnicos y documentos de investigación.
+\item \textbf{Bibliografía y Citas:} Ofrece herramientas integradas para gestionar citas y referencias bibliográficas.
+El sistema BibTeX es ampliamente utilizado para crear y mantener listas de referencias bibliográficas.
+\item \textbf{Generación de Índices y Tablas de Contenido:} Genera automáticamente índices, tablas de contenido y listas
+de figuras y tablas, lo que facilita la navegación y búsqueda en documentos extensos.
+\item \textbf{Personalización y Plantillas:} Los usuarios pueden personalizar el formato y el estilo de los documentos
+mediante la definición de plantillas y estilos personalizados. Además, hay muchas plantillas predefinidas disponibles
+para diferentes tipos de documentos.
+\item \textbf{Portabilidad:} Los documentos son archivos de texto plano, lo que los hace altamente portátiles y
+compatibles con una amplia variedad de sistemas operativos y software de edición LaTeX.
+\item \textbf{Entorno de Desarrollo:} Los usuarios pueden escribir documentos LaTeX en un entorno de desarrollo
+específico (como TeXShop, TeXworks o Overleaf) o en editores de texto simples con soporte para LaTeX.
+\item \textbf{Salida en Diversos Formatos:} Además de la salida en formato PDF, LaTeX puede generar documentos en
+formatos como DVI (Device Independent), PostScript y HTML, entre otros.
+\end{enumerate}
+\subsubsection{Estándares de documentación}
+LaTeX, como sistema de composición de texto, no impone estándares específicos de documentación, pero es altamente
+adaptable y permite a los usuarios aplicar sus propios estándares y convenciones de acuerdo con las necesidades de
+documentación de su proyecto. Consideraciones:
+
+\begin{enumerate}[series=listWWNumxviii,label=\arabic*.,ref=\arabic*]
+\item \textbf{Estructura de Documentos:} Es común establecer una estructura de documentos consistente, que puede incluir
+secciones como portada, resumen, índice, introducción, capítulos, conclusiones, bibliografía, entre otros. La forma en
+que se organizan y nombran estas secciones puede seguir un estándar específico.
+\item \textbf{Estilo de Texto:} Permite el control detallado del estilo de texto, como la fuente, el tamaño de fuente,
+la alineación, el espaciado y los márgenes. Se pueden definir estándares de estilo de texto para garantizar la
+uniformidad en todo el documento.
+\item \textbf{Notación Matemática:} Si el documento incluye notación matemática o fórmulas, es importante seguir
+estándares de notación matemática para garantizar la precisión y la comprensión. LaTeX es conocido por su capacidad
+para representar notación matemática de manera profesional.
+\item \textbf{Citas y Referencias:} Para la gestión de citas y referencias bibliográficas, se pueden seguir estándares
+como el estilo APA, MLA, Chicago, etc. LaTeX ofrece herramientas como BibTeX para facilitar la gestión de
+bibliografías.
+\item \textbf{Numéricos y Unidades:} Cuando se presenten números y unidades, es importante seguir estándares de notación
+numérica y unidades de medida, como el Sistema Internacional de Unidades (SI).
+\item \textbf{Diagramas y Gráficos:} Si se incluyen diagramas, gráficos o figuras, es útil mantener un estándar de
+formato y etiquetado para facilitar la comprensión.
+\item \textbf{Estándares de Presentación:} La presentación visual del documento, incluyendo la elección de colores,
+estilos de encabezado y pie de página, y otros elementos de diseño, puede seguir estándares específicos de la
+organización o el proyecto.
+\item \textbf{Consistencia de Términos:} Es importante ser consistente en la terminología utilizada a lo largo del
+documento. Se pueden establecer estándares para la terminología y definiciones.
+\item \textbf{Formato de Página:} Los estándares de formato de página, como el tamaño de página, los márgenes y la
+orientación (vertical u horizontal), deben ser consistentes en todo el documento.
+\item \textbf{Control de Versiones:} Si se utiliza un sistema de control de versiones como Git, es útil seguir prácticas
+de control de versiones para documentación, como incluir marcas de tiempo o números de versión.
+\end{enumerate}
+
+\bigskip
+
+\subsection{Cuadro comparativo técnico de las herramientas de documentación }
+\begin{flushleft}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\centering
+\begin{supertabular}{m{4cm}m{4cm}m{4cm}}
+\hline
+\centering{\bfseries Aspecto} &
+\centering{\bfseries LaTeX} &
+\centering\arraybslash{\bfseries Sphinx}\\\hline
+\centering{\bfseries Propósito Principal} &
+\centering Composición de documentos de alta calidad, especialmente en ámbitos académicos y científicos. &
+\centering\arraybslash Generación de documentación técnica a partir del código fuente.\\\hline
+\centering{\bfseries Estructura de Marcado} &
+\centering Uso de comandos y etiquetas de marcado LaTeX para estructurar documentos. &
+\centering\arraybslash Uso de reStructuredText (reST), un formato de marcado estructurado, para describir la estructura
+del documento.\\\hline
+\centering{\bfseries Citas y Referencias} &
+\centering Ofrece herramientas como BibTeX para gestionar citas y referencias bibliográficas. &
+\centering\arraybslash Admite referencias cruzadas y genera automáticamente índices y tablas de contenido.\\\hline
+\centering{\bfseries Diagramas y Gráficos} &
+\centering Permite la inclusión de figuras y gráficos, pero requiere preparar los gráficos por separado. &
+\centering\arraybslash Se enfoca en la documentación de texto y no incluye capacidades de gráficos directamente.\\\hline
+\centering{\bfseries Integración de Código} &
+\centering No está diseñado para incluir y formatear código fuente en la documentación. &
+\centering\arraybslash Admite la inclusión y formateo de código fuente en la documentación.\\\hline
+\centering{\bfseries Control de Versiones} &
+\centering Los archivos LaTeX son archivos de texto plano y son compatibles con sistemas de control de versiones. &
+\centering\arraybslash Puede integrarse con sistemas de control de versiones para gestionar cambios en la
+documentación.\\\hline
+\centering{\bfseries Salida en Varios Formatos} &
+\centering Puede generar documentos en formatos como PDF, DVI, PostScript, etc. &
+\centering\arraybslash Puede generar documentos en HTML, PDF, y otros formatos.\\\hline
+\centering{\bfseries Nivel de Dificultad} &
+\centering Puede tener una curva de aprendizaje más pronunciada debido a su marcado específico. &
+\centering\arraybslash Más accesible y fácil de aprender para usuarios técnicos.\\\hline
+\end{supertabular}
+\end{flushleft}
+
+\bigskip
+
+\subsection{Seleccionar herramienta de documentación para aplicar en la construcción de tarea de investigación.}
+Escogeremos LaTeX debido a que es una herramienta la cual es muy personalizable a nivel de documentación y porque es
+para documentos de texto plano, que es en lo que se basa la tarea de investigación. 
+
+\subsection{Instalación de LaTeX}
+\textbf{Paso 1: Descargar e instalar LaTeX}
+
+Iremos al sitio oficial de LaTeX \href{https://www.latex-project.org/}{\textstyleInternetlink{LaTeX - A document
+preparation system (latex-project.org)}} donde encontraremos la forma oficial de instalar la herramienta
+\href{https://www.tug.org/interest.html#free}{\textstyleInternetlink{TeX Resources on the Web - TeX Users Group
+(tug.org)}} en el sitio se encuentran diferentes link de descargar para Windows, MacOS y Linux.
+
+\textbf{Paso 2 (Opcional): Instalar un editor de LaTeX.}
+
+Podemos encontrar diferentes editores de LaTeX en la web y utilizarlo de manera online en los navegadores, aunque es
+recomendable utilizar un editor de LaTeX dedicado.
+
+\textbf{Paso 3: Iniciar a escribir y compilar un documento LaTeX.}
+
+\begin{itemize}[series=listWWNumxix,]
+\item Abre el editor de LaTeX.
+\item Crear un documento de LaTeX de prueba o utilizaremos uno existente.
+\item Escribe tu primer código de prueba, ejemplo:
+\end{itemize}
+{\textbackslash}documentclass\{article\} \ \% Define el tipo de documento (artículo)
+
+{\textbackslash}title\{Ejemplo de Documento LaTeX\} \ \% Título del documento
+
+{\textbackslash}author\{Tú Nombre\} \ \% Tu nombre como autor
+
+{\textbackslash}date\{{\textbackslash}today\} \ \% La fecha actual
+
+{\textbackslash}begin\{document\} \ \% Comienza el documento
+
+{\textbackslash}maketitle \ \% Imprime el título, autor y fecha
+
+{\textbackslash}section\{Introducción\} \ \% Comienza una sección
+
+Este es un ejemplo básico de un documento LaTeX. Aquí puedes ver cómo crear una estructura simple y algunos elementos de
+formato de texto.
+
+{\textbackslash}section\{Formato de Texto\} \ \% Otra sección
+
+Puedes {\textbackslash}textbf\{resaltar texto en negrita\} o {\textbackslash}textit\{en cursiva\} utilizando comandos
+específicos.
+
+\begin{itemize}[series=listWWNumxx,]
+\item Guardar el archivo como “.tex”.
+\item Compilamos el documento para generar un archivo PDF, este proceso debería tardar unos segundos, pero depende mucho
+del editor que se esté utilizando.
+\end{itemize}
+\textbf{Paso 4: Visualizar documento PDF}
+
+Una vez se haya compilado el documento podremos visualizarlo en forma de PDF, podemos abrir este documento y visualizar
+si todo esta como lo hemos colocado y de esta manera confirmar que LaTeX esta funcionando de manera correcta.
+
+\subsubsection{Video de instalación de LaTeX}
+\url{https://youtu.be/T81ncFZ_8uQ?si=cRjov9Zutg9noqrr}
+
+\subsection{Justificación de uso de las herramientas.}
+\textbf{Selenium WebDrive}
+
+He escogido esta herramienta de pruebas, debido a que tiene un amplio soporte de navegadores, un tema que es de suma
+importancia debido a que un sistema desplegado en la web no se utilizara de un solo navegador en específico, además,
+podemos automatizar las pruebas que queramos realizar y es compatible con diferentes lenguajes de programación.
+
+La documentación de la misma es muy basta y la comunidad que la rodea es muy activa lo cual es de suma importancia
+debido a que los problemas que podemos llegar a presentar pueden ser resueltos con mucha facilidad y que las personas
+de la comunidad nos ayuden a resolverlo 
+
+\textbf{LaTeX}
+
+Es una herramienta de texto plano por lo que es significativamente lo más apegado a lo que necesitamos realizar, además
+tenemos muchos comandos de etiqueta con lo cual tenemos un gran catálogo de fuentes, además es utilizado para
+documentación extensa y permite la inclusión de figuras y diferentes formas. Contiene una comunidad activa la cual
+muestra la utilización de diferentes etiquetas y la personalización de estas.
+
+
+\bibliographystyle{plain}
+\bibliography{referencias.bib}
+\cite{libro1}
+\cite{libro2}
+\cite{libro3}
+\cite{libro4}
+\cite{libro5}
+
+\end{document}
